@@ -1,0 +1,13 @@
+sudo apt-get install python3.8 -y && python --version && pip --version
+FROM ubuntu:latest
+
+EXPOSE 8080
+EXPOSE 50000
+
+RUN apt-get update && apt install sudo -y && apt install wget -y 
+RUN sudo apt install openjdk-11-jdk-headless -y  && java --version  
+RUN sudo apt-get install python3.8 -y && python --version && pip --version 
+RUN wget http://archives.jenkins-ci.org/war-stable/2.319.2/jenkins.war 
+CMD java -jar jenkins.war
+
+

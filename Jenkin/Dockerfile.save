@@ -1,0 +1,8 @@
+FROM ubuntu:latest
+
+EXPOSE 8080
+EXPOSE 50000
+
+RUN apt-get update && apt install wget -y \
+&& apt instal default-jdk && java -version \
+&& wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | apt-key add - \
