@@ -2,7 +2,7 @@ FROM ubuntu:latest
 
 EXPOSE 8080
 EXPOSE 50000
-ARG TZ=Europe/Minsk
+ENV TZ=Europe/Minsk
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN apt-get update && apt install sudo -y && apt install wget -y \
