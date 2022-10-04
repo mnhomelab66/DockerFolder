@@ -2,7 +2,7 @@ FROM ubuntu:latest
 
 EXPOSE 8080
 EXPOSE 50000
-ARG DEBIAN_FRONTEND=noninteractive
+ENV DEBIAN_FRONTEND=noninteractive 
 
 RUN apt-get update && apt install sudo -y && apt install wget -y \
 && apt-get install -y software-properties-common && sudo add-apt-repository ppa:deadsnakes/ppa && sudo apt install openjdk-11-jdk-headless -y  && java --version \ 
